@@ -9,6 +9,7 @@
 2.2.1.1 : the size is 16.3 Kib, the permissions are -rwxr-xr-x, architecture x86-64. <br>
 2.2.1.3 : No, because we output the build time which may differ <br>
 2.2.1.4 : Yes <br>
+2.2.1.5 : It works because we have the same architecture, if their machine had a different one, the output would have been different. <br>
 2.2.1.6 : This is bad practice because someone who download a binary can't know what is inside <br>
 
 ## 2.3.1
