@@ -12,3 +12,4 @@
 
 2.6.1.2 : the estimation gets closer and the execution time rises, yes it is consistent.
 2.6.1.3 : it's not buildtime reproducible because there is macros, the file montecarlobuildtime.c is an equivalent which is buildtime reproducible
+2.6.1.4 : it's not runtime reproducible because we use the current time to build the seed, the file montecarloruntime.c is an equivalent which is runtiime reproducible
