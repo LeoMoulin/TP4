@@ -31,6 +31,20 @@
 
 ## 3.3.1
 3.3.1.1 : we need two parameters, Docker doesn't change that <br>
-3.3.1.2 : 
+3.3.1.2 : with listing 7 we have ~277Mo and with listing 8, we have ~8,3Mo. Listing 7 is heavier as listing 8 uses multi stage build. The result is that in listing 7 all the builds tools are kept in the result but in listing 8 this is not the case.
+3.3.1.3 : the binary size is 16.4 KiB. The difference comes from the fact that the container also contains Alpine.
+3.3.1.4 : the purpose is, in a multi stage build, to copy files from a previous build stage into the final image.
 
+## 4.1.6
+4.1.6.1 : yes 
+4.1.6.2 : yes it is in /nix/store
+4.1.6.3 : yes because nix ensures deterministic builds 
+4.1.6.4 : nix shells create a temporary environment but nix profile add the binary permanently
+4.1.6.5 : /nix/store contains all packets and their dependencies, this is immutable because we want to prevent accidental modifications.
+4.1.6.6 : nix flake lock ensures full reproducibility by binding dependencies to a fixed version. This makes sure every person running the program has the intended versions of the required packages.
+4.1.6.8 : with a flake file
+4.1.6.9 : yes, I should share the flake.lock file too. If I don't, the other students won't be able to fully reproduce the intended environment.
+
+### General questions 
+1 : When we use Nix and we terminate the sessions, everything is remove from the computer. When we use docker or podman, we need to store the image and it takes space.
 
